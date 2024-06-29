@@ -1,0 +1,18 @@
+body {
+    display: flex;
+    margin-top: 130px;
+    margin-left: 500px;
+    justify-content: center;
+    background-image: url(https://img.freepik.com/premium-photo/green-background-with-tree-branch-with-white-flowers_1000124-4691.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border:5px solid rgb(225, 225, 200);
+    width:920px;
+    height: 750px;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(10px);
+    border-radius: 60px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  
+  }

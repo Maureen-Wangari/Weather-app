@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 
 function WeatherComponent() {
   const [data, setData] = useState(null);
@@ -9,8 +8,12 @@ function WeatherComponent() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://api.weatherapi.com/v1/current.json?key=00169f5e92a24e4c8a654216242906&aqi=no&q=London');
-        setData(response.data);
+        const response = await fetch('http://api.weatherapi.com/v1/current.json?key=00169f5e92a24e4c8a654216242906 &aqi=no&q=London');
+        if (!response.ok) {
+          throw new Error(`HTTP error status: ${response.status}`);
+        }
+        const jsonData = await response.json();
+        setData(jsonData);
         setLoading(false);
       } catch (err) {
         setError(err.message);
